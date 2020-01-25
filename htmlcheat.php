@@ -48,7 +48,7 @@
         </div>
 
         //PASS A VARIABLE TO ANOTHER PAGE 
-        <a href="page.php?var_name=<?=$var?>" >
+        <a href="page.php?var_name=<?=$var?>">
 
 
         //UPDATE 
