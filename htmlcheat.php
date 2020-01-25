@@ -47,9 +47,44 @@
             </div>
         </div>
 
+        //PASS A VARIABLE TO ANOTHER PAGE 
+        <a href="page.php?var_name=<?=$var?>" >
 
 
+        //UPDATE 
+        <?php require('errors.php'); ?>
+        <?php 
+            $resultz = mysqli_query($db,"SELECT * FROM users WHERE id='$uid'");
+            $rowz= mysqli_fetch_array($resultz);
+        ?>
+        <form class="form" action="htmlcheat.php" method="post">
+        <div class="form-group">
+            <div class="col-xs-6">
+                <label for="first_name"><h4>First name</h4></label>
+                <input type="text" class="form-control" name="fname" id="first_name" value="<?php echo $rowz['firstName']; ?>">
+            </div>
+            </div>
+            <div class="form-group">
+                
+                <div class="col-xs-6">
+                    <label for="last_name"><h4>Last name</h4></label>
+                    <input type="text" class="form-control" name="lname" id="last_name" value="<?php echo $rowz['lastName']; ?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="uname" value="<?=$uname?>" style="opacity: 0;" />
+                <input type="text" name="uid" value="<?=$uid?>" style="opacity: 0;" />
+                <input type="text" name="uemail" value="<?=$uemail?>" style="opacity: 0;" />
+            </div>
 
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <br>
+                    <button class="btn btn-lg btn-success" type="submit" name="Add_prof"><i class="glyphicon glyphicon-ok-sign"></i> UPDATE PROFILE</button>
+                </div>
+            </div>
+        </form>
+    </div>
 
 
     </body>
